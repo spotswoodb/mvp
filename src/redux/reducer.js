@@ -1,7 +1,10 @@
 function reducer(state = [], action){
     switch(action.type) {
-        //case value:
-
+        case "SET_MESSAGE":
+            return {
+                ...state,
+                message: action.payload
+            }
         // break;
 
         default:
