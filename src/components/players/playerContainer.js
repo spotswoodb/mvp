@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { setMessage } from './../../redux/messageActions'
+import { setPlayer } from '../../redux/playerActions'
 
-class MessageContainer extends Component {
+class PlayerContainer extends Component {
 
     componentDidMount(){
         fetch("")
         .then(r => r.json())
-        .then(messagesArray => this.props.dispatchSetMessage(messagesArray))
+        .then(playersArray => this.props.dispatchSetPlayer(playersArray))
     }
     
     render(){
@@ -36,4 +36,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerContainer)

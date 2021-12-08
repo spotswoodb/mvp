@@ -1,11 +1,11 @@
 import React from 'react';
-import MessageContainer from './messages/messageContainer';
+import PlayerContainer from './players/playerContainer';
 import { Switch, Route } from 'react-router-dom';
 
 export default function Pages() {
     return (
        <Switch>
-           <Route path='/messages' component={routerProps => <MessageContainer routerProps={routerProps} />} />
+           <Route path='/players' component={routerProps => <PlayerContainer routerProps={routerProps} />} />
        </Switch>
     )
 }

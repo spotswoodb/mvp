@@ -3,7 +3,6 @@ import './App.css';
 import { NavLink } from 'react-router-dom'
 import Pages from './components/pages'
 // import { Widget } from 'react-chat-widget'
-import 'react-chat-widget/lib/styles.css'
 
 function App() {
 
@@ -11,11 +10,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div>
       <Pages>
         <NavLink to="/">Home</NavLink><br />
-        <NavLink to="/messages">Messages</NavLink>
-        {/* <Widget /> */}
+        <NavLink to="/messages">Messages</NavLink><br />
       </Pages>
     </div>
   );
