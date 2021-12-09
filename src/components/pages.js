@@ -6,6 +6,7 @@ export default function Pages() {
     return (
        <Switch>
            <Route path='/players' component={routerProps => <PlayerContainer routerProps={routerProps} />} />
+        {/* about us */}
        </Switch>
     )
 }
