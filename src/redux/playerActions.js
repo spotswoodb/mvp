@@ -1,8 +1,10 @@
-export const setPlayer = () => {
+import { SET_PLAYERS } from "./constants"
+
+export const fetchPlayers = () => {
     return (dispatch) => {
         fetch("http://localhost:3000/players")
         .then(r => r.json())
-        .then(player => dispatch({tpe: 'SET_PLAYER', payload: player}))
+        .then(player => dispatch({tpe: 'SET_PLAYERS', payload: player}))
     }
 }
 
