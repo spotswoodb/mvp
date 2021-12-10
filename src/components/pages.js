@@ -7,7 +7,7 @@ export default function Pages() {
     return (
        <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/players' element={routerProps => <PlayerContainer routerProps={routerProps} />} />
+            <Route path='/players' element={<PlayerContainer />} />
        </Routes>
     )
 }
