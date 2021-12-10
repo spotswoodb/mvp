@@ -4,7 +4,7 @@ export const fetchPlayers = () => {
     return (dispatch) => {
         fetch("http://localhost:3000/players")
         .then(r => r.json())
-        .then(player => dispatch({tpe: 'SET_PLAYERS', payload: player}))
+        .then(player => dispatch({tpe: SET_PLAYERS, payload: players}))
     }
 }
 
