@@ -14,10 +14,10 @@ class PlayerContainer extends Component {
     
         return(
             <div>
-                <h2>All Messages</h2>
-                <div>
+                <h2>All Players</h2>
+                {/* <div> */}
                     {/* {this.props.message.map(message => <p key={id}>{message.text}</p>)} */}
-                </div>
+                {/* </div> */}
             </div>
         )
 

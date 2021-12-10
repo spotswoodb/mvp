@@ -1,9 +1,9 @@
 function reducer(state = [], action){
     switch(action.type) {
-        case "SET_MESSAGE":
+        case "SET_PLAYER":
             return {
                 ...state,
-                message: action.payload
+                player: action.payload
             }
         // break;
 
