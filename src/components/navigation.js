@@ -22,6 +22,11 @@ function Navigation() {
                   Players
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/hits">
+                  Hits
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
