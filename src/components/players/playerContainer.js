@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { setPlayer } from '../../redux/playerActions'
+import PlayerCard from './PlayerCard'
 
 class PlayerContainer extends Component {
 
     componentDidMount(){
-        fetch("")
-        .then(r => r.json())
-        .then(playersArray => this.props.dispatchSetPlayer(playersArray))
+        this.props.dispatchSetPlayer()
     }
     
     render(){
@@ -15,9 +14,9 @@ class PlayerContainer extends Component {
         return(
             <div>
                 <h2>All Players</h2>
-                {/* <div> */}
-                    {/* {this.props.message.map(message => <p key={id}>{message.text}</p>)} */}
-                {/* </div> */}
+                <div>
+                    {this.props.player.map(player => <PlayerCard key={player.id} {...player} />)}
+                </div>
             </div>
         )
 
@@ -26,13 +25,13 @@ class PlayerContainer extends Component {
 
 function mapStateToProps(state){
     return {
-        message: state.message
+        player: stateFromStore.people
     }
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        dispatchSetMessage: () => dispatch(setMessage())
+        dispatchSetPlayer: () => dispatch(setPlayer())
     }
 }
 
