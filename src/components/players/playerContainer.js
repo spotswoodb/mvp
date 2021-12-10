@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { setPlayer } from '../../redux/playerActions'
+import { fetchPlayers } from '../../redux/playerActions'
 import PlayerCard from './PlayerCard'
 
 class PlayerContainer extends Component {
 
     componentDidMount(){
-        this.props.dispatchSetPlayer()
+        this.props.dispatchSetPlayers()
     }
     
     render(){
@@ -15,7 +15,7 @@ class PlayerContainer extends Component {
             <div>
                 <h2>All Players</h2>
                 <div>
-                    {this.props.player.map(player => <PlayerCard key={player.id} {...player} />)}
+                    {this.props.players.map(player => <PlayerCard key={player.id} {...player} />)}
                 </div>
             </div>
         )
@@ -23,15 +23,15 @@ class PlayerContainer extends Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(stateFromStore){
     return {
-        player: stateFromStore.people
+        players: stateFromStore.players
     }
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        dispatchSetPlayer: () => dispatch(setPlayer())
+        dispatchSetPlayers: () => dispatch(fetchPlayers())
     }
 }
 

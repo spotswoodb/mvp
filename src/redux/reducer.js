@@ -1,12 +1,14 @@
 import { SET_PLAYERS } from './constants'
 
-function reducer(state = [], action){
+function reducer(state = {
+    players: []
+}, action){
 
     switch(action.type) {
         case SET_PLAYERS:
             return {
                 ...state,
-                player: action.payload
+                players: action.payload
             };
         // break;
 
