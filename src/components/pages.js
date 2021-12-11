@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerContainer from './players/playerContainer';
+import PlayerContainer from './players/PlayerContainer';
 import HitsContainer from './Hits/HitsContainer'
 import Home from './home';
 import { Routes, Route } from 'react-router-dom';

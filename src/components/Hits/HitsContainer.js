@@ -4,7 +4,7 @@ import { fetchHits } from '../../redux/HitActions'
 
 export default function HitsContainer(){
     
-    const hits = useSelector(state => state)
+    const hits = useSelector((state) => state.hits)
     const dispatch = useDispatch()
 
     useEffect(() => {

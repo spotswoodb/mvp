@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchPlayers } from '../../redux/playerActions'
+import { fetchPlayers } from '../../redux/PlayerActions'
 
 export default function PlayerContainer() {
 
-    const players = useSelector(state => state)
+    const players = useSelector((state) => state.players)
     const dispatch = useDispatch()
 
     useEffect(() => {
