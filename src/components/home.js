@@ -8,17 +8,17 @@ function Home() {
           <div className="col-lg-7">
             <img
               className="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
+              src="https://cdn.shopify.com/s/files/1/0558/7937/files/Website_Special_Collections_Hero.jpg?v=1622656045"
               alt=""
             />
           </div>
           <div className="col-lg-5">
-            <h1 className="font-weight-light">Home page</h1>
+            <h1 className="font-weight-light">MVP Player Valuations</h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              To me, ideas are worth nothing unless executed.
+              They are just a multiplier.
+              Execution is worth millions.
+              - Steve Jobs
             </p>
           </div>
         </div>

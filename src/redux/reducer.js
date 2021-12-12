@@ -1,9 +1,9 @@
 import { SET_PLAYERS } from './constants'
-import { SET_HITS } from './constants'
+import { SET_PLAYER_HITS } from './constants'
 
 export default function reducer(state = {
     players: [],
-    hits: [],
+    playerHits: [],
     loading: false
 }, action) {
 
@@ -15,11 +15,11 @@ export default function reducer(state = {
                 players: action.payload
             };
 
-        case SET_HITS:
+        case SET_PLAYER_HITS:
 
             return {
                 ...state,
-                hits: action.payload
+                playerHits: action.payload
             };
 
         default:

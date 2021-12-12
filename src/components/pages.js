@@ -1,6 +1,6 @@
 import React from 'react';
 import PlayerContainer from './players/PlayerContainer';
-import HitsContainer from './Hits/HitsContainer'
+import PlayerHitsContainer from './Hits/PlayerHitsContainer'
 import Home from './home';
 import { Routes, Route } from 'react-router-dom';
 
@@ -8,8 +8,8 @@ export default function Pages() {
     return (
        <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/players' element={<PlayerContainer />} />
-            <Route path='/hits' element={<HitsContainer />} />
+            <Route exact path='/players' element={<PlayerContainer />} />
+            <Route exact path='/players/:id/hits' element={routerProps => <PlayerHitsContainer routerProps={routerProps}/>} />
        </Routes>
     )
 }
