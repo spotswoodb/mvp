@@ -4,6 +4,8 @@ The intent of this application is to provide the user interesting statistics on 
 
 This project uses Node.js 16.11.1
 
+Visit https://github.com/spotswoodb/mvp_backend for the backend API of this project.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
