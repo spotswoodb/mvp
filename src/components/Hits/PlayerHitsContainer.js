@@ -1,15 +1,18 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchHits } from '../../redux/PlayerHitActions'
+import React from 'react'
+// import { useEffect } from 'react';
+// import { useSelector } from 'react-redux'
+// import { fetchHits } from '../../redux/PlayerHitActions'
 
 export default function PlayerHitsContainer(props){
     
-    const playerHits = useSelector((state) => state.playerHits)
-    const dispatch = useDispatch()
+    const playerHits = props.hits
 
-    useEffect(() => {
-        dispatch(fetchHits(this.state.props.id))
-    }, [])
+    // const playerHits = useSelector((state) => state.players.hits)
+    // const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(fetchHits(this.state.props.id))
+    // }, [])
 
     return(
         <div>
