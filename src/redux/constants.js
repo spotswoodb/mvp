@@ -1,3 +1,3 @@
 export const SET_PLAYERS = "SET_PLAYERS"
 
-export const SET_PLAYER_HITS = "SET_PLAYER_HITS"
+export const SET_PLAYER = "SET_PLAYER"

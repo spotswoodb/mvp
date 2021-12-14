@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPlayers } from '../../redux/PlayerActions';
-// import PlayerHitsContainer from '../Hits/PlayerHitsContainer'
 import { Link } from 'react-router-dom'
 
 export default function PlayerContainer() {
@@ -17,7 +16,7 @@ export default function PlayerContainer() {
         <div>
             <h2>All Players</h2>
             <ul>
-                {players.map(p => <li key={p.id}><Link to={`players/${p.id}/hits`}>{p.name}</Link></li>)}
+                {players.map(p => <li key={p.id}><Link to={`${p.id}/hits`}>{p.name}</Link></li>)}
             </ul>
         </div>
     )

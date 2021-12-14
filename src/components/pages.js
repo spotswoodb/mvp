@@ -8,9 +8,9 @@ export default function Pages() {
     return (
        <Routes>
             <Route path='/' element={<Home />} />
-            <Route exact path='/players' element={<PlayerContainer />}>
-                <Route exact path=':id/hits' element={routerProps => <PlayerHitsContainer routerProps={routerProps} />} />
-            </Route>
+            <Route path='players' element={<PlayerContainer />}/>
+            <Route path='players/:id/hits' element={<PlayerHitsContainer />} />
+
        </Routes>
     )
 }

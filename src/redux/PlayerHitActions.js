@@ -1,10 +1,10 @@
-// import { SET_PLAYER_HITS } from "./constants"
+// import { SET_PLAYER } from "./constants"
 
-// export function fetchHits(id){
+// export function fetchPlayer(id){
 //     return (dispatch) => {
-//         fetch(`http://localhost:3000/players/${id}/hits`)
+//         fetch(`http://localhost:3000/players/${id}`)
 //         .then(r => r.json())
-//         .then(playerHits => dispatch({type: SET_PLAYER_HITS, payload: playerHits}))
+//         .then(playerHits => dispatch({type: SET_PLAYER, payload: playerHits}))
 //     }
 // }
 

@@ -1,24 +1,27 @@
 import React from 'react'
-// import { useEffect } from 'react';
-// import { useSelector } from 'react-redux'
-// import { fetchHits } from '../../redux/PlayerHitActions'
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react';
+import { fetchPlayers } from '../../redux/PlayerActions'
+import { useSelector, useDispatch } from 'react-redux';
 
-export default function PlayerHitsContainer(props){
+
+export default function PlayerHitsContainer(){
     
-    const playerHits = props.hits
-
-    // const playerHits = useSelector((state) => state.players.hits)
-    // const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     dispatch(fetchHits(this.state.props.id))
-    // }, [])
+    let params = useParams();
+    const players = useSelector((state) => state.players)
+    const dispatch = useDispatch()
+    const player = players.find(p => p.id === parseInt(params.id))
+    useEffect(() => {
+        dispatch(fetchPlayers())
+    }, [])
 
     return(
         <div>
             <h2>Hits for this player</h2>
             <ul>
-                {playerHits.map(p => <li key={p.id}>{p.pitch_type}</li>)}
+                {player && player.hits.map(h => 
+                    <li key={h.id}>{h.pitch_type}</li>
+                )}
             </ul>
         </div>
     )
