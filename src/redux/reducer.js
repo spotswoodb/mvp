@@ -1,4 +1,4 @@
-import { SET_PLAYERS } from './constants'
+import { SET_PLAYERS, ADD_PLAYER } from './constants'
 
 export default function reducer(state = {
     players: [],
@@ -11,6 +11,13 @@ export default function reducer(state = {
             return  {
                 ...state,
                 players: action.payload
+            };
+
+        case ADD_PLAYER:
+
+            return {
+                ...state,
+                players: [...state.players, action.payload]
             };
 
         default:

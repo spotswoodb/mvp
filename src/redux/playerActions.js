@@ -1,4 +1,4 @@
-import { SET_PLAYERS } from "./constants"
+import { SET_PLAYERS, ADD_PLAYER } from "./constants"
 
 export function fetchPlayers() {
     return (dispatch) => {
@@ -8,9 +8,18 @@ export function fetchPlayers() {
     }
 }
 
+export function createEvent(player){
+    return dispatch => {
+        fetch("http://localhost:3000/players", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(player)
+        })
+        .then(e => e.json())
+        .then(p => dispatch({type: ADD_PLAYER, payload: p}))
+    }
+}
 
-
-// fix URL in fetch request
-
-
-// ({type: 'SET_MESSAGE', payload: message})

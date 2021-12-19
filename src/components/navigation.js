@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Navigation() {
   return (
@@ -18,15 +18,15 @@ function Navigation() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/players">
+                <Link className="nav-link" to="/players">
                   Players
-                </NavLink>
+                </Link>
               </li>
-              {/* <li className="nav-item">
-                <NavLink className="nav-link" to="/hits">
-                  Hits
-                </NavLink>
-              </li> */}
+              <li className="nav-item">
+                <Link className="nav-link" to="/players/new">
+                  Add New Events
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
