@@ -8,7 +8,7 @@ export function fetchPlayers() {
     }
 }
 
-export function createEvent(player){
+export function createPlayer(player){
     return dispatch => {
         fetch("http://localhost:3000/players", {
             method: "POST",

@@ -24,7 +24,7 @@ function Navigation() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/players/new">
-                  Add New Events
+                  Add New Player Events
                 </Link>
               </li>
             </ul>
