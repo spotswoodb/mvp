@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { createPlayer } from '../../redux/PlayerActions'
@@ -7,7 +7,7 @@ import { createPlayer } from '../../redux/PlayerActions'
 
 export default function NewPlayerForm() {
     
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, reset, formState, formState: { errors, isSubmitSuccessful } } = useForm({
         defaultValues: {
             name: "",
             batter_id: ""
@@ -16,12 +16,19 @@ export default function NewPlayerForm() {
 
     const dispatch = useDispatch()
     
-    const onSubmit = (data) => {
-        data.preventDefault()
-        console.log(data)
-    }
 
-    
+    const onSubmit = (data) => {
+        // data.preventDefault();       
+        dispatch(createPlayer({name: data.name, batter_id: data.batter_id}))
+    }
+    useEffect(() => {
+        if (formState.isSubmitSuccessful) {
+            reset({
+                name: "",
+                batter_id: ""
+            });
+        }
+    }, [formState, reset]);
     
 
 
@@ -47,6 +54,7 @@ export default function NewPlayerForm() {
                 placeholder="Batter ID"
                 />
             {errors.batter_id && <p>Batter ID must be 5 numbers or greater</p>}
+            {isSubmitSuccessful}
             <input type="submit" />
         </form>
     )
