@@ -10,3 +10,7 @@
             )
         }}
     </Dropzone>
+
+
+    Update state using React Hook Form instead. Start here, add new player.
+    

@@ -9,7 +9,7 @@ export function fetchPlayers() {
 }
 
 export function createPlayer(player){
-    return dispatch => {
+    return (dispatch) => {
         fetch("http://localhost:3000/players", {
             method: "POST",
             headers: {
