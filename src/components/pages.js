@@ -1,7 +1,7 @@
 import React from 'react';
-import PlayerContainer from './players/PlayerContainer';
+import PlayerContainer from './Players/PlayerContainer';
 import PlayerHitsContainer from './Hits/PlayerHitsContainer'
-import NewPlayerForm from './players/NewPlayerForm'
+import NewPlayerForm from './Players/NewPlayerForm'
 import Home from './home';
 import { Routes, Route } from 'react-router-dom';
 
