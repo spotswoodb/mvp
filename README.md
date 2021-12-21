@@ -23,6 +23,8 @@ $ npm install
 ```bash
 bundle install
 ```
+
+Start the server
 ```bash
 $ rails s
 ```
