@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { createPlayer } from '../../redux/PlayerActions'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -28,7 +28,8 @@ export default function NewPlayerForm() {
                 name: "",
                 batter_id: ""
             });
-        }
+            
+        } 
     }, [formState, reset]);
     
 
@@ -48,7 +49,8 @@ export default function NewPlayerForm() {
                                 })} 
                                 name="name"
                                 placeholder="Freddie Freeman" 
-                                /><br></br>
+                                />
+                                <br></br>
                         </div>
                         <div className="col-12">
                             <Form.Label htmlFor="inputBatterId" className="col-form-label">Batter ID</Form.Label>
@@ -60,11 +62,13 @@ export default function NewPlayerForm() {
                                 })} 
                                 name="batter_id"
                                 placeholder="12345"
-                                /><br></br>
+                                />
+                                <br></br>
                         </div>
                         {errors.batter_id && <p>Batter ID must be 5 numbers or greater</p>}
                         {isSubmitSuccessful}
                         <Button className="submit-button" value="submit" type="submit">Submit</Button>
+                        <br></br>
                     </Form.Group>
                 </Form>
             </div>

@@ -1,38 +1,41 @@
-This is the MVP project listing all baseball hits in the 2021 major league season. This application will be updated periodically.
+# MVP
+This is the MVP project. This application lists players from the 2021 Major League season and their associated hits. This application will be updated periodically.
 
-The intent of this application is to provide the user interesting statistics on players and their hits from the 2021 season in one convenient place.
+The purpose of this application is to provide the user interesting statistics on players and their hits from the 2021 season in one convenient place. Each player has many hits including:
+- Game date
+- Type of pitch that was hit
+- Type of hit (ground ball, popup, line drive, fly ball, homerun, etc.)
+- Hit Distance
 
-This project uses Node.js 16.11.1
+## Installation
+This project uses the following:
+- Node.js 16.11.1
+- Ruby 2.6.8
+- Rails 6.1.4
+- Postgres 14.1
 
-Visit https://github.com/spotswoodb/mvp_backend for the backend API of this project.
+1) Install the JS packages:
+```bash
+$ npm install
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+2) Visit https://github.com/spotswoodb/mvp_backend for the backend API of this project. Clone this repository and run the following:
+```bash
+bundle install
+```
+```bash
+$ rails s
+```
 
-## Available Scripts
+3) Visit the home page
+```bash
+http://localhost:3001
+```
 
-In the project directory, you can run:
+## Contributing
+You are welcome to make a pull request. If you want to make major changes, please open an issue or contact me at spotswoodb@gmail.com detailing what you would like to change.
 
-### `npm start`
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
