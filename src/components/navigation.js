@@ -14,7 +14,6 @@ function Navigation() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/">
                   Home
-                  <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -23,9 +22,9 @@ function Navigation() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/players/new">
-                  Add New Player Events
-                </Link>
+                <NavLink className="nav-link" to="/players/new">
+                  Add A New Player
+                </NavLink>
               </li>
             </ul>
           </div>

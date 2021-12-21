@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { createPlayer } from '../../redux/PlayerActions'
+import { Form, Button } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function NewPlayerForm() {
@@ -18,7 +20,6 @@ export default function NewPlayerForm() {
     
 
     const onSubmit = (data) => {
-        // data.preventDefault();       
         dispatch(createPlayer({name: data.name, batter_id: data.batter_id}))
     }
     useEffect(() => {
@@ -33,29 +34,40 @@ export default function NewPlayerForm() {
 
 
     return (
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("name", {
-                    required: {
-                    value: true,
-                    message: "Name is required"
-                    }
-                })} 
-                name="name"
-                placeholder="Player Name" 
-                />
-            <input type="number" {...register("batter_id", {
-                    valueAsNumber: true,
-                    validate: (value) => {
-                        return value.toString().length >= 5
-                    }
-                })} 
-                name="batter_id"
-                placeholder="Batter ID"
-                />
-            {errors.batter_id && <p>Batter ID must be 5 numbers or greater</p>}
-            {isSubmitSuccessful}
-            <input type="submit" />
-        </form>
+        <div className="d-flex justify-content-center align-items-center form-container">
+            <div className="row row-cols-lg-auto g-3 align-items-center">
+                <Form onSubmit={handleSubmit(onSubmit)}><br></br>
+                    <Form.Group>
+                        <div className="col-12">
+                            <Form.Label htmlFor="inputName" className="col-form-label">Player Name</Form.Label>
+                            <Form.Control className="name-input" id="inputName" {...register("name", {
+                                    required: {
+                                    value: true,
+                                    message: "Name is required"
+                                    }
+                                })} 
+                                name="name"
+                                placeholder="Freddie Freeman" 
+                                /><br></br>
+                        </div>
+                        <div className="col-12">
+                            <Form.Label htmlFor="inputBatterId" className="col-form-label">Batter ID</Form.Label>
+                            <Form.Control className="batter-id-input" type="number" {...register("batter_id", {
+                                    valueAsNumber: true,
+                                    validate: (value) => {
+                                        return value.toString().length >= 5
+                                    }
+                                })} 
+                                name="batter_id"
+                                placeholder="12345"
+                                /><br></br>
+                        </div>
+                        {errors.batter_id && <p>Batter ID must be 5 numbers or greater</p>}
+                        {isSubmitSuccessful}
+                        <Button className="submit-button" value="submit" type="submit">Submit</Button>
+                    </Form.Group>
+                </Form>
+            </div>
+        </div>
     )
 }
