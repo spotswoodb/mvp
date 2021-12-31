@@ -2,10 +2,15 @@ import { SET_PLAYERS, ADD_PLAYER } from "./constants"
 
 export function fetchPlayers() {
     return (dispatch) => {
+        console.log("c")
         fetch("http://localhost:3000/players")
         .then(r => r.json())
-        .then(players => dispatch({type: SET_PLAYERS, payload: players}))
+        .then(players => {
+            console.log('d')
+            dispatch({type: SET_PLAYERS, payload: players})
+        })
     }
+    console.log("e")
 }
 
 export function createPlayer(player){

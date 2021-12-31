@@ -6,9 +6,13 @@ import { fetchPlayers } from '../redux/PlayerActions'
 function Home() {
 
   const dispatch = useDispatch()
+  
   useEffect(() => {
+    console.log("a")
     dispatch(fetchPlayers())
-}, [])
+    console.log("b")
+
+  }, [])
 
   return (
     <div className="home">
