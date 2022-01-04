@@ -1,4 +1,4 @@
-import { SET_PLAYERS, ADD_PLAYER } from "./constants"
+import { SET_PLAYERS, ADD_PLAYER, DELETE_PLAYER } from "./constants"
 
 export function fetchPlayers() {
     return (dispatch) => {
@@ -27,4 +27,15 @@ export function createPlayer(player){
         .then(p => dispatch({type: ADD_PLAYER, payload: p}))
     }
 }
+
+export function deletePlayer(id) {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/players/${id}`, {
+            method: 'DELETE'
+        })
+        .then(r => r.json())
+        .then(playerId => dispatch({type: DELETE_PLAYER, payload: playerId}))
+    }
+}
+
 

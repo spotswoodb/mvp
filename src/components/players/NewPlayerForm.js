@@ -22,6 +22,7 @@ export default function NewPlayerForm() {
     const onSubmit = (data) => {
         dispatch(createPlayer({name: data.name, batter_id: data.batter_id}))
     }
+
     useEffect(() => {
         if (formState.isSubmitSuccessful) {
             reset({
@@ -48,7 +49,7 @@ export default function NewPlayerForm() {
                                     }
                                 })} 
                                 name="name"
-                                placeholder="Freddie Freeman" 
+                                placeholder="Freeman, Freddie" 
                                 />
                                 <br></br>
                         </div>

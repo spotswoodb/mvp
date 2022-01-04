@@ -1,12 +1,14 @@
-import { useSelector } from 'react-redux';
-import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
+import { deletePlayer } from '../../redux/PlayerActions';
 
 export default function PlayerContainer() {
 
     const playersInRedux = useSelector((state) => state.players)
     const [players, setPlayers] = useState(playersInRedux)
     const [isAlphabetized, setIsAlphabetized] = useState(false)
+    const dispatch = useDispatch()
 
     // second attempt
 
@@ -73,6 +75,18 @@ export default function PlayerContainer() {
         setIsAlphabetized(!isAlphabetized)
     }
 
+    const removePlayer = (playerId) => {
+        dispatch(deletePlayer(playerId))
+
+    }
+
+    // rerender page when Player is deleted with updated state
+
+    // useEffect(() => {
+     
+    // })
+    
+
 
    
     return(
@@ -87,6 +101,7 @@ export default function PlayerContainer() {
                                     <div className="card-body">
                                         <h5 className="card-title">{p.name}</h5>
                                         <button type="button" className="btn btn-primary"><Link className="link-light" to={`${p.id}/hits`}>See More Stats</Link></button>
+                                        <button type='button' className="btn btn-secondary" onClick={() => removePlayer(p.id)}>Delete</button>
                                     </div>
                                 </div>
                             </div>    
