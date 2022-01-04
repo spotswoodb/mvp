@@ -6,7 +6,7 @@ import { deletePlayer } from '../../redux/PlayerActions';
 export default function PlayerContainer() {
 
     const playersInRedux = useSelector((state) => state.players)
-    const [players, setPlayers] = useState(playersInRedux)
+    // const [players, setPlayers] = useState(playersInRedux)
     const [isAlphabetized, setIsAlphabetized] = useState(false)
     const dispatch = useDispatch()
 
@@ -63,28 +63,38 @@ export default function PlayerContainer() {
 
     // third attempt with ternary
 
+    // const sortPlayers = () => {
+    //     if (isAlphabetized) {
+    //         setPlayers(playersInRedux)
+    //     } else {
+    //         const sortedPlayers = [...players].sort((a, b) => {
+    //             return ((a.name === b.name) ? 0 : ((a.name > b.name)? 1: -1));
+    //         })
+    //         setPlayers(sortedPlayers)
+    //     }
+    //     setIsAlphabetized(!isAlphabetized)
+    // }
+
+    // 4th approach
+
     const sortPlayers = () => {
-        if (isAlphabetized) {
-            setPlayers(playersInRedux)
-        } else {
-            const sortedPlayers = [...players].sort((a, b) => {
-                return ((a.name === b.name) ? 0 : ((a.name > b.name)? 1: -1));
-            })
-            setPlayers(sortedPlayers)
-        }
         setIsAlphabetized(!isAlphabetized)
+        if ( isAlphabetized === true) {
+            return playersInRedux.sort((a,b) => a.name > b.name ? 1 : -1)
+        } else if ( isAlphabetized === false) {
+            return playersInRedux.sort((a,b) => a.id > b.id ? 1 : -1)
+        }
     }
 
     const removePlayer = (playerId) => {
         dispatch(deletePlayer(playerId))
-
     }
 
     // rerender page when Player is deleted with updated state
 
-    // useEffect(() => {
-     
-    // })
+    useEffect(() => {
+        return playersInRedux
+    }, [playersInRedux])
     
 
 
@@ -95,7 +105,7 @@ export default function PlayerContainer() {
             <button onClick={sortPlayers}>Alphabetize</button>
                 <div className="d-flex justify-content-center align-items-center container">
                     <div className="align-self-center row row-cols-1 row-cols-md-3 g-4">
-                        {players.map(p =>
+                        {playersInRedux.map(p =>
                             <div key={p.id} className="col"> 
                                 <div className="card" style={{width: '18rem'}}>
                                     <div className="card-body">
