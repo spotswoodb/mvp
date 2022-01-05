@@ -26,6 +26,11 @@ function Navigation() {
                   Add A New Player
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/codingchallenge">
+                  Coding Challenge
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
