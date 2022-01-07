@@ -1,5 +1,5 @@
 # MVP
-This is the MVP project. This application lists players from the 2021 Major League season and their associated hits. This application will be updated periodically.
+This is the MVP project. The application lists players from the 2021 Major League season and their associated hits. This application will be updated periodically.
 
 The purpose of this application is to provide the user interesting statistics on players and their hits from the 2021 season in one convenient place. Each player has many hits including:
 - Game date
